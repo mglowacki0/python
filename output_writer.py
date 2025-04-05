@@ -1,9 +1,9 @@
 import csv
 
-def save_routes(routes, filepath):
-    if not routes:
+def save_to_csv(data, filepath):
+    if not data:
         return
     with open(filepath, mode='w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=routes[0].keys())
+        writer = csv.DictWriter(f, fieldnames=data[0].keys())
         writer.writeheader()
-        writer.writerows(routes)
+        writer.writerows(data)
